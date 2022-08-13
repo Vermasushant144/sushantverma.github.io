@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="index.js">
+    
+    
+    <style>
+        /* body{
+            background-color: cornflowerblue;
+        } */
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            scroll-behavior: smooth;
+            
+            
+       }
+        /* navbar css */
+       
+        nav{
+            position: fixed;
+            width: 100%;
+            padding: 20px 0;
+            z-index: 999;
+            transition: all 0.3s ease;
+           
+            
+        }
+        nav.sticky{
+            background: brown;
+            padding: 13px 0;
+        }
+        nav .navbar{
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: auto;
+            /* background-color: #f0f8ff; */
+
+
+        }
+
+       nav .navbar .logo a{
+        font-size: 35px;
+        font-weight: 300;
+        color:rgb(9, 241, 241);
+       }
+       nav.sticky .navbar .logo a{
+        color: white;
+       
+       }
+       nav .navbar .menu {
+        display: flex;
+        position: relative;
+        
+       }
+       nav .navbar .menu li{
+        list-style: none;
+        margin: 8px;
+        
+       }
+       nav .navbar .menu a{
+        font-size: 20px;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: 500;
+        color:black;
+        padding: 6px;
+        transition: all 0.4s ease;
+        
+
+       }
+       .navbar .menu a:hover{
+        color: rgb(223, 19, 19);
+        
+       }
+       nav.sticky .menu a{
+        color: white;
+        
+        
+       }
+       nav.sticky .menu a:hover{
+        color: black;
+       }
+       .navbar .media-icons a{
+        color: rgb(0, 252, 168);
+        font-size: 40px;
+        margin: 9px;
+        
+       }
+       .navbar .media-icons a:hover{
+        color: skyblue;
+        
+       }
+       nav.sticky .media-icons a{
+        color: white;
+       }
+       /* side navigation menu button */
+       nav .menu-btn,
+       .navbar .menu .cancel-btn{
+        position: absolute;
+        color: white;
+        right: 30px;
+        top: 20px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: none;
+       }
+       nav .menu-btn{
+        color: rgb(2, 255, 255);
+       }
+       nav.sticky .menu-btn{
+        color: white;
+       }
+       .navbar .menu .menu-btn{
+        color: white;
+
+       }
+       /* home section design */
+       .home{
+        height: 100vh;
+        width: 100%;
+        background: url("images/sushantverma.jpg");
+        /* background-size: cover; */
+        background-position: center center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: right 80px ;
+        border: 30px;
+        border-color: blue;
+        box-shadow: inset;
+        border-radius:  60vw 40vh;
+        background-size: contain;
+        color: blue;
+       }
+       .home .home-content{
+        width: 90%;
+        height: 100%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+
+       }
+       .home .text-one{
+        font-size: 25px;
+        color: black;
+       }
+       .home .text-two{
+        font-size: 75px;
+        color: black;
+        font-weight: 600;
+        margin-left: -3px;
+       }
+       .home .text-three{
+        font-size: 40px;
+        color: rgb(253, 0, 0);
+        margin: -5px 0;
+        
+       }
+       .home .text-four{
+        font-size: 25px;
+        margin: 5px 0;
+        color: black;
+       }
+      .home .button button{
+        outline: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 25px;
+        font-weight: 400;
+        background: brown;
+        color: white;
+        cursor: pointer;
+        border: px solid transparent;
+        transition: all 0.4s ease;
+      }
+      .home .button button:hover{
+        border-color: brown;
+        background-color: white;
+        color: black;
+      }
+      /* about sectiion css */
+      section{
+        padding-top: 40px;
+
+      }
+      section .content{
+        width: 80%;
+        margin: 40px auto;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+      }
+      section .title{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+      }
+      section .title span{
+        color: black;
+        font-size: 30px;
+        font-weight: 400;
+        padding-bottom: 8px;
+        position: relative;
+      }
+      section .title span::before,
+      section .title span::after{
+        content: "";
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: brown;
+        left: 0;
+        bottom: 0;
+      }
+      section .title span:hover::after{
+        bottom: -7px;
+        width: 70%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .about .about-details{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+      }
+     .about .about-details .left{
+        width: 45%;
+     }
+     .about .left img{
+        height: 300px;
+        width: 300px;
+        object-fit: cover;
+        border-radius: 12px;
+     }
+     .about .about-details .right{
+        color: black;
+        font-size: 25px;
+        font-weight: 400;
+        margin-bottom: 10px;
+        
+     }
+     .about .about-details .right .topic{
+        color: black;
+        font-size: 25px;
+        font-weight: 400;
+        margin-bottom: 10px;
+        text-decoration:2px  underline;
+     }
+     .about-details .right p{
+        text-align: justify;
+        color: black;
+     }
+     section .button{
+        margin: 16px 0;
+
+     }
+     section .button button{
+        outline: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        font-size: 25px;
+        font-weight: 400;
+        background: brown;
+        color: aliceblue;
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition: all 0.4s ease;
+     }
+     section .button button:hover{
+        border-color:brown ;
+        background-color: white;
+        color: brown;
+     }
+     /* My skills CSS */
+     .skills{
+        background: #f0f8ff;
+     }
+     .skills .content{
+        padding: 40px 0;
+
+     }
+     .skills .skills-details{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+     }
+     section .content .skills-details  .topic{
+         width: 80%;
+        font-size: 3vh;
+        font-weight: 800;
+        
+     }
+  
+     
+     .skills-details p{
+        
+        text-align: justify;
+        margin-right: 20px;
+     }
+     .skills .skills-details .experience{
+        display: flex;
+        align-items: center;
+        margin: 0 10px;
+     }
+    .skills-details .experience .num{
+        color: black;
+        font-size: 80px;
+     }
+     .skills-details .experience .exp{
+        color: black;
+        margin-left: 20px;
+        font-size: 20px;
+        font-weight: 700;
+        margin:  0 6px;
+     
+     }
+     .skills-details .boxes{
+        width: 45%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px;
+        
+     
+     }
+     .skills-details .box{
+        width: calc(100% / 2 -20px);
+        margin: 20px 0;
+     }
+     .skills-details .boxes .topic{
+        font-size: 50px;
+        color: brown;
+
+     }
+     .skills-details .boxes .per{
+        display: flex;
+        font-size: 50px;
+        color: brown;
+        margin: 10px;
+    
+     }
+     /* services css */
+     .services .boxes{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+     }
+  
+     .boxes .box .topic{
+        font-weight: bold;
+        /* color: brown; */
+        width: 80%;
+        text-align: top;
+        margin-left: 30px;
+     }
+     .services .boxes .box{
+        margin: 2px 0;
+        width: calc(100% / 3 - 30px);
+        text-align: center;
+        border-radius: 12px;
+        padding: 30px 10px;
+        box-shadow: 0 5px 10px black;
+        cursor: default;
+        transition: all 0.4s ease;
+     }
+     .services .boxes .box:hover{
+        background: brown;
+        color: black;
+     }
+     .services .boxes .box .icons{
+        height: 50px;
+        width: 50px;
+        background:brown ;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 50px;
+        font-size: 18px;
+        color: white;
+        margin: 0 auto 10px auto;
+        transition: all 0.4s ease;
+     }
+     .services .box:hover .icons{
+        background: white;
+        color: brown;
+     }
+     .services .boxes .box:hover .topic,
+     .services .boxes .box:hover p{
+        color: white;
+        transition: all .4s ease;
+
+     }
+     /* contact css */
+     .contact{
+        background: #f0f8ff;
+     }
+     .contact .content{
+        margin: 0 auto;
+        width: 80%;
+        
+     }
+     .topic , .per{
+        font-weight: bold;
+        /* font-size: 17px; */
+        color: red;
+        margin: 12px;
+     }
+     .contact .text{
+        width: 80%;
+        text-align: center;
+        margin: auto;
+
+     }
+     /* footer css */
+     footer{
+        background: brown;
+        padding: 15px 0;
+        text-align: center;
+        font-family: "Poppins",sans-serif;
+     }
+     footer .text span{
+        font-size: 17px;
+        font-weight: 400;
+        color: white;
+     }
+     footer .text span a{
+        font-weight: 500;
+        color: white;
+     }
+     footer .text span a:hover{
+        text-decoration: underline;
+     }
+     .scroll-button a{
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        color: white;
+        background: brown;
+        padding: 10px 12px;
+        font-size: 18px;
+        border-radius: 6px;
+        box-shadow: rgb(0,0,0,0.15);
+        display: none;
+
+
+     }
+     /* reposible sites */
+     @media (max-width:1190px){
+        section .content{
+            width: 85%;
+        }
+    }
+    @media (max-width:1000px){
+        .about .about-details{
+            justify-content: center;
+            flex-direction: column;
+        }
+        .about .about-details .left{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .about-details .right{
+            width: 90%;
+            margin: 40px 0;
+
+        }
+        .services .boxes .box{
+            margin: 20px 0;
+            width: calc(100% / 1 - 50px);
+        }
+    }
+    @media (max-width:750px){
+        nav .navbar {
+            width: 90%;
+        }
+    
+        nav .navbar .menu{
+            position: fixed;
+            left: -100%;
+            top: 0;
+            background: brown;
+            height: 100vh;
+            max-width: 400px;
+            width: 100%;
+            padding-top: 60px;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.5s ease;
+        }
+        .navbar.active .menu{
+            left: 0;
+
+        }
+        nav .navbar .menu a{
+            font-size: 23px;
+            display: block;
+            color: white;
+            margin: 10px 0;
+        }
+        nav.sticky .menu a:hover{
+            color: brown;
+
+        }
+        nav .navbar .media-icons{
+            display: none;
+        }
+        nav .menu-btn, 
+        .navbar .menu .cancel-btn{
+            display: block;
+        }
+        .home .text-two{
+            font-size: 65px;
+        }
+        .home .text-three{
+            font-size: 35px;
+        }
+        .skills .skills-details{
+            align-items: center;
+            justify-items: center;
+            flex-direction: column;
+
+        }
+        .skills-details.text{
+            width: 100%;
+            margin-bottom: 50px;
+        }
+        .skills-details .boxes{
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .services .boxes .box{
+            margin: 20px;
+            width: 100%;
+        }
+        .contact .text{
+            width: 100%;
+        }
+    }
+    @media(max-width:500px){
+        .home .text-two{
+            font-size: 55px;
+        }
+        .home .text-three{
+            font-size: 33px;
+
+        }
+        .skills-details .boxes .per{
+            font-size: 50px;
+            color: brown;
+        }
+    }
+
+     
+    </style>
+  
+
+</head>
+
+
+<body>
+ 
+     
+    <!-- move to up bottom -->
+    <div class="scroll-button">
+        <a href="#home"><i class="fa fa-arrow-up"></i></a>
+    </div>
+<!-- --------------------------------------------------------------------------------------------------------------------------------->
+<!-- navigation bar -->
+
+<nav>
+    <div class="navbar" >
+        <div class="logo"><a href="#">portfolio</a></div>
+        <ul class="menu" >
+            <li> <a href="#home">HOME</a></li>
+            <li> <a href="#about">ABOUT</a></li>
+            <li> <a href="#skills">SKILLS</a></li>
+            <li> <a href="#services">SERVICES</a></li>
+            <li> <a href="#contact">CONTACT</a></li>
+            <div class="cancel-btn ">
+                <i class="fa fa-times"></i>
+            </div>
+
+        </ul>
+        <div class="media-icons">
+            <a href="#"><i class="fa fa-facebook-f" ></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="#"><i class="fa fa-github"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+        </div>
+    
+
+    </div>
+        
+    <div class="menu-btn">
+       <i class="fa fa-bars"></i>
+    </div>
+</nav>
+<section class="home" id="home">
+    <div class="home-content">
+        <div class="text">
+            <div class="text-one">Hello,</div>
+            <div class="text-two">I am sushant verma</div>
+            <div class="text-three">web developer</div>
+            <div class="text-four">From India in Greater Noida{U.P}</div>
+        </div>
+        <div class="button">
+            <button>Hire Me</button>
+        </div>
+    </div>
+</section>
+<!-- about section-- -->
+<section class="about" id="about">
+    <div class="content">
+        <div class="title"><span>About me</span></div>
+        <div class="about-details">
+            <div class="left">
+                <img src="images/animation.jpg" alt="portfolio">
+            </div>
+            <div class="right">
+                <div class="topic">design</div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis eveniet debitis, fuga, quam deleniti excepturi nisi exercitationem eum ipsum veritatis, facilis dolor asperiores enim labore. Repellat omnis vitae laboriosam ipsam.</p>
+                <div class="button">
+                    <button>Download CV</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- my SKILLS section start -->
+<section class="skills" id="skills">
+    <div class="content">
+        <div class="title"><span>My Skills</span></div>
+        <div class="skills-details">
+            <div class="text">
+                <div class="topic">Skills Reflects our knowledge</div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas obcaecati quis, ex nulla, ducimus, quam consequuntur ipsa odit quisquam hic architecto consectetur rerum debitis sunt similique voluptate officia sit ab corporis voluptas dolores provident?</p>
+                <div class="experience">
+                    <div class="num">10</div>
+                    <div class="exp">Year of <br>Experience</div>
+                </div>
+            </div>
+            <div class="boxes">
+                <div class="box">
+                    <div class="topic">HTML</div>
+                    <div class="per">80%</div>
+
+                </div>
+                <div class="box">
+                    <div class="topic">CSS</div>
+                    <div class="per">70%</div>
+                </div>
+                <div class="box">
+                    <div class="topic">javascript</div>
+                    <div class="per">60%</div>
+                </div>
+                <div class="box">
+                    <div class="topic">python</div>
+                    <div class="per">50%</div>
+                </div>
+                <div class="box">
+                    <div class="topic">GERMAN</div>
+                    <div class="per">70%</div> 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- my services -->
+<section class="services" id="services">
+    <div class="content">
+        <div class="title"><span>My Services</span></div>
+        <div class="boxes">
+            <div class="box">
+                <div class="icons">
+                    <i class="fa fa-desktop"></i>
+
+                </div>
+                <div class="topic">Web Development</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ab praesentium illo labore impedit, laudantium deleniti odio tempora saepe quia omnis laboriosam dolores odit beatae accusamus voluptatibus mollitia eum aliquam placeat porro, sit necessitatibus?</p>
+
+            </div>
+            
+            <div class="box">
+                <div class="icons">
+                    <i class="fa fa-paint-brush"></i>
+
+                </div>
+                <div class="topic">Graphic Design</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ab praesentium illo labore impedit, laudantium deleniti odio tempora saepe quia omnis laboriosam dolores odit beatae accusamus voluptatibus mollitia eum aliquam placeat porro, sit necessitatibus?</p>
+
+            </div>
+
+            <div class="box">
+                <div class="icons">
+                    <i class="fa fa-code"></i>
+
+                </div>
+                <div class="topic">Coding</div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita ab praesentium illo labore impedit, laudantium deleniti odio tempora saepe quia omnis laboriosam dolores odit beatae accusamus voluptatibus mollitia eum aliquam placeat porro, sit necessitatibus?</p>
+
+            </div>
+            
+            </div>
+            
+        </div>
+
+    </div>
+</section>
+<section class="contact" id="contact">
+    <div class="content">
+        <div class="title"><span>Contact Me</span></div>
+        <div class="text">
+            <div class="topic">Have any project</div>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos commodi numquam possimus similique libero placeat saepe architecto consequuntur, modi at est nostrum eligendi officiis! A numquam praesentium natus mollitia voluptatum nihil placeat, reprehenderit dolorum?</p>
+            <div class="button">
+                <button>Let's chat</button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- footer section -- -->
+<footer>
+    <div class="text">
+        <span>Created By <a href="#">Sushant Verma</a>| &#169; 2022 All Right Reserved</span>
+    </div>
+</footer>
+
+<script src="index.js">
+
+</script>
+</body>
+</html>
